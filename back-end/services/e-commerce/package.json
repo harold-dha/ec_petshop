@@ -1,0 +1,23 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "e-commerce petshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harold-dha/ec_petshop.git"
+  },
+  "author": "Harold Yontop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harold-dha/ec_petshop/issues"
+  },
+  "homepage": "https://github.com/harold-dha/ec_petshop#readme",
+  "dependencies": {
+    "@hapi/hapi": "^21.0.0",
+    "dotenv": "^16.0.3"
+  }
+}
