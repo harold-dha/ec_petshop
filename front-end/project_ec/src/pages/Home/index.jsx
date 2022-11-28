@@ -1,30 +1,20 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { Button } from "../../styles/Button";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
-
-import "./index.css";
-// import { Box, Divider, Paper, Typography } from "@mui/material";
-// import { GridProducts, GridActions } from "../../components";
-
+import { Sliders } from "../../components";
 import { get } from "../../services";
+import { Box, Typography } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import CardActions from "@mui/material/CardActions";
+import Button from "@mui/material/Button";
+import "../../App.css";
+import { Grid } from "@mui/material";
 
 function Home() {
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   const [refresh, setRefresh] = useState(0);
-
   function addRefresh() {
     setRefresh(refresh + 1);
   }
@@ -52,140 +42,170 @@ function Home() {
     //   <GridProducts list={products} />
     // </>
     <>
-      {/* <div className="container">
-        <div className="grid grid-two-column">
-          <div className="hero-section-data">
-            <h1>CompuPlaza</h1>
-            <p>
-              Encontraras los mejores precios y tambien hay rebajas para que
-              puedas aprovechar!
-            </p>
-            <NavLink>
-              <Button>Ir ahora</Button>
-            </NavLink>
-          </div>
-          <div className="hero-section-image">
-            <figure>
-              <img src="images/hero.jpg" className="img-style" />
-            </figure>
-          </div>
-        </div>
-      </div> */}
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 3500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img
-            src="https://pe-soapros-demos.s3.amazonaws.com/petshop/slider1.jpg"
-            width="100%"
-            height="100%"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://pe-soapros-demos.s3.amazonaws.com/petshop/slider2.jpg"
-            width="100%"
-            height="100%"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://pe-soapros-demos.s3.amazonaws.com/petshop/slider3.jpg"
-            width="100%"
-            height="100%"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://pe-soapros-demos.s3.amazonaws.com/petshop/slider4.jpg"
-            width="100%"
-            height="100%"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://pe-soapros-demos.s3.amazonaws.com/petshop/slider5.jpg"
-            width="100%"
-            height="100%"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://pe-soapros-demos.s3.amazonaws.com/petshop/slider6.jpg"
-            width="100%"
-            height="100%"
-          />
-        </SwiperSlide>
-      </Swiper>
+      <Sliders />
+      <Box>
+        <Typography sx={{ marginTop: "5rem" }} variant="h3" textAlign="center">
+          Nuevo Ingreso
+        </Typography>
+        <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Grid item xs={4}>
+            <Card
+              className="card"
+              sx={{
+                display: "flex",
+                width: "350px",
+                marginTop: "20px",
+              }}
+            >
+              <CardMedia
+                component="img"
+                sx={{ width: 151 }}
+                image="https://pe-soapros-demos.s3.amazonaws.com/petshop/pr01.jpg"
+                alt=""
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginTop: "20px",
+                }}
+              >
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Typography component="div" variant="h4">
+                    Pañal de Entramiento
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    Esta hecho a base de carbon, tiene una medida de: 60 x 60 cm
+                    -
+                    <br />
+                    <br />
+                    Diponible: 15 und
+                  </Typography>
+                </CardContent>
+                <CardActions
+                  sx={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Button size="medium" variant="text">
+                    16 -15 -2022
+                  </Button>
+                  <Button size="medium" variant="outlined">
+                    Comprar
+                  </Button>
+                </CardActions>
+                <Box
+                  sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
+                ></Box>
+              </Box>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card
+              className="card"
+              sx={{ display: "flex", width: "350px", marginTop: "20px" }}
+            >
+              <CardMedia
+                component="img"
+                sx={{ width: 151 }}
+                image="https://pe-soapros-demos.s3.amazonaws.com/petshop/pr01.jpg"
+                alt=""
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginTop: "20px",
+                }}
+              >
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Typography component="div" variant="h4">
+                    Pañal de Entramiento
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    Esta hecho a base de carbon, tiene una medida de: 60 x 60 cm
+                    -
+                    <br />
+                    <br />
+                    Diponible: 15 und
+                  </Typography>
+                </CardContent>
+                <CardActions
+                  sx={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Button size="medium" variant="text">
+                    16 -15 -2022
+                  </Button>
+                  <Button size="medium" variant="outlined">
+                    Comprar
+                  </Button>
+                </CardActions>
+                <Box
+                  sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
+                ></Box>
+              </Box>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
+            <Card
+              className="card"
+              sx={{ display: "flex", width: "350px", marginTop: "20px" }}
+            >
+              <CardMedia
+                component="img"
+                sx={{ width: 151 }}
+                image="https://pe-soapros-demos.s3.amazonaws.com/petshop/pr01.jpg"
+                alt=""
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginTop: "20px",
+                }}
+              >
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Typography component="div" variant="h4">
+                    Pañal de Entramiento
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    Esta hecho a base de carbon, tiene una medida de: 60 x 60 cm
+                    -
+                    <br />
+                    <br />
+                    Diponible: 15 und
+                  </Typography>
+                </CardContent>
+                <CardActions
+                  sx={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Button size="medium" variant="text">
+                    16 -15 -2022
+                  </Button>
+                  <Button size="medium" variant="outlined">
+                    Comprar
+                  </Button>
+                </CardActions>
+                <Box
+                  sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
+                ></Box>
+              </Box>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
 }
-const Wrapper = styled.section`
-  padding: 12rem 0;
-  img {
-    min-width: 10rem;
-    height: 10rem;
-  }
-  .hero-section-data {
-    p {
-      margin: 2rem 0;
-    }
-    h1 {
-      text-transform: capitalize;
-      font-weight: bold;
-    }
-    .intro-data {
-      margin-bottom: 0;
-    }
-  }
-  .hero-section-image {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  figure {
-    position: relative;
-    &::after {
-      content: "";
-      width: 60%;
-      height: 80%;
-      background-color: rgba(81, 56, 238, 0.4);
-      position: absolute;
-      left: 50%;
-      top: -5rem;
-      z-index: -1;
-    }
-  }
-  .img-style {
-    width: 100%;
-    height: auto;
-  }
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    .grid {
-      gap: 10rem;
-    }
-    figure::after {
-      content: "";
-      width: 50%;
-      height: 100%;
-      left: 0;
-      top: 10%;
-      /* bottom: 10%; */
-      background-color: rgba(81, 56, 238, 0.4);
-    }
-  }
-`;
+
 export default Home;
