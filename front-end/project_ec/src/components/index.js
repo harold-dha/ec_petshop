@@ -3,3 +3,7 @@ export { default as GridActions } from "./GridActions";
 export { default as Footer } from "./Footer";
 export { default as Nav } from "./Nav";
 export { default as Sliders } from "./Slider";
+export { default as Ingreso } from "./Ingreso";
+export { default as ListaImagen } from "./ListaImagen";
+export { default as Comentarios } from "./Comentarios";
+export { default as Marcas } from "./Marcas";
