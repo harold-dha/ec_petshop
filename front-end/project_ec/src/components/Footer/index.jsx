@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Button } from "../../styles/Button";
 import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIcon from "@mui/icons-material/Email";
 
 const Footer = () => {
   return (
@@ -27,8 +29,55 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3>CompuPlaza</h3>
-              <p>Somo una gran empresa con un gran prestigio </p>
+              <h3>Petshop</h3>
+              <p>
+                Delivery para mascotas. De todo para tu mascota: comida,
+                antipulgas, arena. Compra Gran Plus, Simparica, Bravecto,
+                Advance, Brit y más.{" "}
+              </p>
+              <h3 style={{ marginTop: "15px", fontWeight: "700" }}>Contacto</h3>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div className="btn-wha">
+                  <a
+                    href="https://api.whatsapp.com/send?phone=51970793132&text=Quiero%20comprar%20un%20producto%20"
+                    target="_blank"
+                  >
+                    <WhatsAppIcon
+                      sx={{
+                        color: "#fff",
+                        fontSize: "20px",
+                        marginRight: "10px",
+                      }}
+                    />
+                  </a>
+                  {/* <Link to={{ pathname: "https://herewecode.io/" }} target="_blank">Click to open HereWeCode (new tab)</Link> */}
+                </div>
+                <a
+                  href="https://api.whatsapp.com/send?phone=51970793132&text=Quiero%20comprar%20un%20producto%20"
+                  target="_blank"
+                  style={{ color: "#fff" }}
+                >
+                  +51 970793132
+                </a>
+              </div>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <a>
+                  <EmailIcon
+                    sx={{
+                      color: "#fff",
+                      fontSize: "20px",
+                      marginRight: "10px",
+                    }}
+                  />
+                </a>
+                <a style={{ color: "#fff" }}>petshoptventas@gmail.com</a>
+              </div>
+              <h3 style={{ marginTop: "15px", fontWeight: "700" }}>
+                Lugar de Recojo
+              </h3>
+              <div style={{ color: "#fff" }}>
+                Av. Ventanilla N° 500 - ref: Costado de plaza vea
+              </div>
             </div>
             <div className="footer-subscribe">
               <h3>Suscríbete para recibir actualizaciones importantes</h3>
@@ -86,6 +135,12 @@ const Wrapper = styled.section`
   .iSIFGq {
     margin: 0;
   }
+  .btn-wha:hover {
+    cursor: pointer;
+  }
+  .footer-about {
+    margin-left: 10px;
+  }
   .contact-short {
     max-width: 60vw;
     margin: auto;
@@ -100,14 +155,16 @@ const Wrapper = styled.section`
     }
   }
   footer {
+    font-size: 14px;
     padding: 14rem 0 9rem 0;
-    background-color: ${({ theme }) => theme.colors.footer_bg};
+    background-color: #1b699b;
     h3 {
       color: ${({ theme }) => theme.colors.hr};
       margin-bottom: 2.4rem;
     }
     p {
       color: ${({ theme }) => theme.colors.white};
+      font-size: 14px;
     }
     .footer-social--icons {
       display: flex;

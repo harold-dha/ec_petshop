@@ -6,6 +6,7 @@ import {
   ListaImagen,
   Sliders,
   Marcas,
+  Footer,
 } from "../../components";
 import { get } from "../../services";
 
@@ -45,6 +46,7 @@ function Home() {
       <ListaImagen />
       <Comentarios />
       <Marcas />
+      <Footer />
     </>
   );
 }

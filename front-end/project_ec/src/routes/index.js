@@ -2,7 +2,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../GlobalStyle";
 import { MainLayout } from "../layouts";
-import { HomeView, LoginView, SignUpView } from "../pages";
+import {
+  HomeView,
+  LoginView,
+  SignUpView,
+  SingleProductView,
+  QuienesView,
+  ProductsView,
+  ContactView,
+} from "../pages";
 const Router = () => {
   const theme = {
     colors: {
@@ -36,6 +44,10 @@ const Router = () => {
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<HomeView />} />
+            <Route path="/quienes" element={<QuienesView />} />
+            <Route path="/products" element={<ProductsView />} />
+            <Route path="/contact" element={<ContactView />} />
+            <Route path="/singleproduct/:id" element={<SingleProductView />} />
           </Route>
           <Route path="/login" element={<LoginView />} />
           <Route path="/sign-up" element={<SignUpView />} />

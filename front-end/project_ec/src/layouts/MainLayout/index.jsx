@@ -316,227 +316,262 @@ const MainLayout = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        {user.name}
-      </Typography>
-      <Divider />
-      <List>
-        <ListItem disablePadding href="/perfil">
-          <ListItemButton sx={{ textAlign: "center" }}>
-            <ListItemText primary="Perfil" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding href="/books">
-          <ListItemButton sx={{ textAlign: "center" }}>
-            <ListItemText primary="Bookstore" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding onClick={logout}>
-          <ListItemButton sx={{ textAlign: "center" }}>
-            <ListItemText primary="Logout" />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Box>
+    <>
+      <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          {user.name}
+        </Typography>
+        <Divider />
+        <List>
+          <ListItem disablePadding href="/perfil">
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary="Perfil" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding href="/books">
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary="Bookstore" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding onClick={logout}>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary="Logout" />
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </Box>
+    </>
   );
 
   if (!isAuth()) return <Navigate to="/login" />;
 
   return (
-    <Box>
-      <AppBar component="nav" sx={{ backgroundColor: "#fff", color: "#222" }}>
-        <Toolbar>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "black",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>{" "}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="black"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ color: "black" }} textAlign="center">
-                  Inicio
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ color: "black" }} textAlign="center">
-                  Promociones
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ color: "black" }} textAlign="center">
-                  Categoría
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ color: "black" }} textAlign="center">
-                  Contactanos
-                </Typography>
-              </MenuItem>
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "black",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "black", display: "block", mx: 2 }}
-            >
-              Inicio
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "black", display: "block", mx: 2 }}
-            >
-              Promociones
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "black", display: "block", mx: 2 }}
-            >
-              Categoría
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "black", display: "block", mx: 2 }}
-            >
-              Contactanos
-            </Button>
-          </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Box>
-            <Button component={Link} to="/cart" sx={{ color: "#222" }}>
-              <Badge color="error">
-                <ShoppingCartRoundedIcon />
-              </Badge>
-            </Button>
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">Perfil</Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">Cuenta</Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">Dashboard</Typography>
-              </MenuItem>
-              <MenuItem onClick={logout}>
-                <Typography textAlign="center">Salir</Typography>
-              </MenuItem>
-            </Menu>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{ keepMounted: true }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
+    <>
+      <Box>
+        <AppBar
+          component="nav"
+          sx={{ backgroundColor: "#E5E7FF", color: "#222" }}
         >
-          {drawer}
-        </Drawer>
+          <Toolbar>
+            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "black",
+                textDecoration: "none",
+              }}
+            >
+              LOGO
+            </Typography>{" "}
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="black"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ color: "black" }}
+                    textAlign="center"
+                    component={Link}
+                    to="/"
+                  >
+                    Inicio
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ color: "black" }}
+                    textAlign="center"
+                    component={Link}
+                    to="/quienes"
+                  >
+                    Quienes Somos
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ color: "black" }}
+                    textAlign="center"
+                    component={Link}
+                    to="/products"
+                  >
+                    Productos
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{ color: "black" }}
+                    textAlign="center"
+                    component={Link}
+                    to="/contact"
+                  >
+                    Contactanos
+                  </Typography>
+                </MenuItem>
+              </Menu>
+            </Box>
+            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "black",
+                textDecoration: "none",
+              }}
+            >
+              LOGO
+            </Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "black", display: "block", mx: 2 }}
+                component={Link}
+                to="/"
+              >
+                Inicio
+              </Button>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "black", display: "block", mx: 2 }}
+                component={Link}
+                to="/quienes"
+              >
+                Quienes Somos
+              </Button>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "black", display: "block", mx: 2 }}
+                component={Link}
+                to="/products"
+              >
+                Productos
+              </Button>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "black", display: "block", mx: 2 }}
+                component={Link}
+                to="/contact"
+              >
+                Contactanos
+              </Button>
+            </Box>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+            <Box>
+              <Button component={Link} to="/cart" sx={{ color: "#222" }}>
+                <Badge color="error">
+                  <ShoppingCartRoundedIcon />
+                </Badge>
+              </Button>
+            </Box>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Perfil</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Cuenta</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Dashboard</Typography>
+                </MenuItem>
+                <MenuItem onClick={logout}>
+                  <Typography textAlign="center">Salir</Typography>
+                </MenuItem>
+              </Menu>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Box component="nav">
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{ keepMounted: true }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+              },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+        <Box component="main">
+          <Toolbar />
+          <Outlet />
+        </Box>
       </Box>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <Outlet />
-      </Box>
-    </Box>
+    </>
   );
 };
 
