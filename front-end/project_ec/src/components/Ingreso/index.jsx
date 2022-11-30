@@ -185,12 +185,12 @@ const Ingreso = () => {
             </Grid>
           </Grid>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "end", marginTop: "20px" }}>
+        {/* <Box sx={{ display: "flex", justifyContent: "end", marginTop: "20px" }}>
           <Stack spacing={2}>
-            {/* <Typography>Page: {page}</Typography> */}
+            <Typography>Page: {page}</Typography>
             <Pagination count={10} page={page} onChange={handleChange} />
           </Stack>
-        </Box>
+        </Box> */}
       </Box>
     </>
   );

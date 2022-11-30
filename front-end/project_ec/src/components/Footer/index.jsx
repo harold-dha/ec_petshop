@@ -5,25 +5,12 @@ import { Button } from "../../styles/Button";
 import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 
 const Footer = () => {
   return (
     <>
       <Wrapper>
-        <section className="contact-short">
-          <div className="grid grid-two-column">
-            <div>
-              <h3>¿Preparado para comenzar? </h3>
-              <h3>Habla con nosotros hoy</h3>
-            </div>
-
-            <div>
-              <Button className="btn hireme-btn">
-                <NavLink to="/"> Empezar </NavLink>
-              </Button>
-            </div>
-          </div>
-        </section>
         {/* footer section */}
 
         <footer>
@@ -80,49 +67,228 @@ const Footer = () => {
               </div>
             </div>
             <div className="footer-subscribe">
-              <h3>Suscríbete para recibir actualizaciones importantes</h3>
-              <form action="#">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="ingrese su correo"
-                />
-
-                <input type="submit" value="subscribe" />
-              </form>
+              <h3>TIENDA ONLINE PARA MASCOTAS</h3>
+              <div style={{ marginBottom: "15px" }}>
+                <a style={{ color: "#fff" }} href="">
+                  Perro
+                </a>
+              </div>
+              <div style={{ marginBottom: "15px" }}>
+                <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                  Gato
+                </a>
+              </div>
+              <div style={{ marginBottom: "15px" }}>
+                <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                  Aves
+                </a>
+              </div>
+              <div>
+                <h3 style={{ marginTop: "20px" }}>PROMOCIONES</h3>
+                <div>
+                  <div style={{ marginBottom: "15px" }}>
+                    <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                      Promoción ALIMENTO
+                    </a>
+                  </div>
+                  <div style={{ marginBottom: "15px" }}>
+                    <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                      Promoción ARENA
+                    </a>
+                  </div>
+                  <div style={{ marginBottom: "15px" }}>
+                    <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                      Promoción VERANO
+                    </a>
+                  </div>
+                  <div style={{ marginBottom: "15px" }}>
+                    <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                      Promoción NUEVO
+                    </a>
+                  </div>
+                  <div style={{ marginBottom: "15px" }}>
+                    <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                      Promoción ANTIGUO
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="footer-social">
-              <h3>Siguenos</h3>
-              <div className="footer-social--icons">
-                <div>
-                  <FaDiscord className="icons" />
+            <div className="footer-subscribe">
+              <h3>INFORMACIÓN</h3>
+              <div style={{ marginBottom: "15px" }}>
+                <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                  ¿Quiénes somos?
+                </a>
+              </div>
+              <div>
+                <h3>POLÍTICAS Y LEGAL</h3>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                    Política de Privaciidad
+                  </a>
                 </div>
-                <div>
-                  <FaInstagram className="icons" />
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                    Política de Delivery y Web
+                  </a>
                 </div>
-                <div>
-                  <a href="">
-                    <FaYoutube className="icons" />
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                    Política de Cambio
+                  </a>
+                </div>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                    Política de Promociones
+                  </a>
+                </div>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                    Política de Cookies
+                  </a>
+                </div>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff", marginBottom: "5px" }} href="">
+                    Terminos y Condiciones
                   </a>
                 </div>
               </div>
             </div>
             <div className="footer-contact">
-              <h3>Llamanos</h3>
-              <h3>+51 970793132</h3>
+              <h3>REDES SOCIALES</h3>
+              <div style={{ display: "flex" }}>
+                <div
+                  style={{
+                    color: "#fff",
+                    fontSize: "2rem",
+                    marginRight: "20px",
+                  }}
+                >
+                  <FaDiscord sx={{ color: "#fff", fontSize: "5rem" }} />
+                </div>
+                <div
+                  style={{
+                    color: "#fff",
+                    fontSize: "2rem",
+                    marginRight: "20px",
+                  }}
+                >
+                  <FaInstagram className="icons" />
+                </div>
+                <div
+                  style={{
+                    color: "#fff",
+                    fontSize: "2rem",
+                    marginRight: "20px",
+                  }}
+                >
+                  <a
+                    style={{
+                      color: "#fff",
+                      fontSize: "2rem",
+                      padding: "20px",
+                    }}
+                    href=""
+                  >
+                    <FaYoutube />
+                  </a>
+                </div>
+              </div>
+              <h3 style={{ marginTop: "5rem" }}>
+                ¿Qué encontrarás en Petshop?
+              </h3>
+              <div>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff" }} href="">
+                    Gran plus gatos
+                  </a>
+                </div>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff" }} href="">
+                    Anuncios de campañas
+                  </a>
+                </div>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff" }} href="">
+                    Reuniones perrunos
+                  </a>
+                </div>
+                <div style={{ marginBottom: "15px" }}>
+                  <a style={{ color: "#fff" }} href="">
+                    Accesorios para fiestas
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="footer-bottom--section">
             <hr />
-            <div className="container grid grid-two-column ">
-              <p>
-                @{new Date().getFullYear()} CompuPlaza. Reservados todos los
-                derechos
-              </p>
-              <div>
-                <p>POLITICA & PRIVACIDAD</p>
-                <p>TERMINOS & CONDICIONES</p>
+            <div className="container ">
+              <div style={{ color: "#fff", textAlign: "center" }}>
+                <AutoStoriesIcon sx={{ fontSize: "5rem" }} />
+                <div>Libro de reclamaciones</div>
+              </div>
+              <div
+                className="pagos"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p style={{ fontSize: "25px", marginLeft: "15px" }}>
+                  Paga con:
+                </p>
+                <div style={{ padding: "0 15px" }}>
+                  <img
+                    src="https://pe-soapros-demos.s3.amazonaws.com/petshop/KitCan-petshop-YAPE.jpg.webp"
+                    alt=""
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
+                <div style={{ padding: "0 15px" }}>
+                  <img
+                    src="https://pe-soapros-demos.s3.amazonaws.com/petshop/KitCan-petshop-plin.png.webp"
+                    alt=""
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
+                <div style={{ padding: "0 15px" }}>
+                  <img
+                    src="https://pe-soapros-demos.s3.amazonaws.com/petshop/KitCan-petshop-VISA.jpg.webp"
+                    alt=""
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
+                <div style={{ padding: "0 15px" }}>
+                  <img
+                    src="https://pe-soapros-demos.s3.amazonaws.com/petshop/KitCan-petshop-MASTERCARD.jpg.webp"
+                    alt=""
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
+                <div style={{ padding: "0 15px" }}>
+                  <img
+                    src="https://pe-soapros-demos.s3.amazonaws.com/petshop/KitCan-petshop-American-Express.jpg.webp"
+                    alt=""
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
+                <div style={{ padding: "0 15px" }}>
+                  <img
+                    src="https://pe-soapros-demos.s3.amazonaws.com/petshop/KitCan-petshop-DINERS.jpg.webp"
+                    alt=""
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -132,6 +298,9 @@ const Footer = () => {
   );
 };
 const Wrapper = styled.section`
+  .grid-four-column {
+    grid-template-columns: 1fr 1fr 1fr 0.8fr;
+  }
   .iSIFGq {
     margin: 0;
   }
@@ -144,7 +313,7 @@ const Wrapper = styled.section`
   .contact-short {
     max-width: 60vw;
     margin: auto;
-    padding: 5rem 10rem;
+    padding: 5rem 5rem;
     background-color: ${({ theme }) => theme.colors.bg};
     border-radius: 1rem;
     box-shadow: ${({ theme }) => theme.colors.shadowSupport};
@@ -156,11 +325,12 @@ const Wrapper = styled.section`
   }
   footer {
     font-size: 14px;
-    padding: 14rem 0 9rem 0;
+    padding: 5rem 0 0 0;
     background-color: #1b699b;
     h3 {
       color: ${({ theme }) => theme.colors.hr};
       margin-bottom: 2.4rem;
+      font-weight: 700;
     }
     p {
       color: ${({ theme }) => theme.colors.white};
@@ -174,7 +344,7 @@ const Wrapper = styled.section`
         border-radius: 50%;
         border: 2px solid ${({ theme }) => theme.colors.white};
         .icons {
-          color: ${({ theme }) => theme.colors.white};
+          color: #fff;
           font-size: 2.4rem;
           position: relative;
           cursor: pointer;
@@ -183,7 +353,7 @@ const Wrapper = styled.section`
     }
   }
   .footer-bottom--section {
-    padding-top: 9rem;
+    padding-top: 2rem;
     hr {
       margin-bottom: 2rem;
       color: ${({ theme }) => theme.colors.hr};
@@ -191,6 +361,9 @@ const Wrapper = styled.section`
     }
   }
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    .grid-four-column {
+      grid-template-columns: 1fr;
+    }
     .contact-short {
       max-width: 80vw;
       margin: 4.8rem auto;
@@ -201,10 +374,14 @@ const Wrapper = styled.section`
       }
     }
     footer {
-      padding: 9rem 0 9rem 0;
+      padding: 5rem 0 3rem 0;
     }
     .footer-bottom--section {
       padding-top: 4.8rem;
+    }
+    .pagos {
+      display: flex;
+      flex-direction: column;
     }
   }
 `;
