@@ -1,0 +1,26 @@
+const Hapi = require('@hapi/hapi')
+const { requestListarProductos, responseListarProductos } = require('../documentation/swagger/productos-swagger')
+const { ProductoController } = require('../controllers/ProductosController')
+
+async function register(server, options) {
+    server.route({
+      method: 'GET',
+      path: '/v1/ec_petshop-backend/productos/listar',
+      options: {
+        description: 'Lista de productos',
+        notes: 'Operacion Lista de productos',
+        tags: ['api'],
+        validate: requestListarProductos,
+        response: responseListarProductos,
+        handler: async function(request, h) {
+          const result = await ProductoController.listar();
+          return result
+        }
+      }
+    })
+}
+module.exports = {
+    name: 'plugins.router.producto',
+    version: '1.0.0',
+    register: register
+}
