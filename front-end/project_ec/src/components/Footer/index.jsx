@@ -228,7 +228,7 @@ const Footer = () => {
             <div className="container ">
               <div style={{ color: "#fff", textAlign: "center" }}>
                 <AutoStoriesIcon sx={{ fontSize: "5rem" }} />
-                <div>Libro de reclamaciones</div>
+                <div style={{ margin: "2rem 0" }}>Libro de reclamaciones</div>
               </div>
               <div
                 className="pagos"

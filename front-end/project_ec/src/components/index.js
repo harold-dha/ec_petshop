@@ -7,3 +7,7 @@ export { default as Ingreso } from "./Ingreso";
 export { default as ListaImagen } from "./ListaImagen";
 export { default as Comentarios } from "./Comentarios";
 export { default as Marcas } from "./Marcas";
+export { default as MyImage } from "./MyImage";
+export { default as FilterSection } from "./FilterSection";
+export { default as Sort } from "./Sort";
+export { default as ProductList } from "./ProductList";

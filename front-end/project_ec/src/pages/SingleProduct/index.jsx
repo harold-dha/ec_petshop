@@ -1,55 +1,55 @@
 import styled from "styled-components";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-// import { useProductContext } from "./context/productcontex";
+import { useProductContext } from "../../context/productcontex";
 // import PageNavigation from "./components/PageNavigation";
-// import MyImage from "./components/MyImage";
+import { MyImage } from "../../components";
 import { Container } from "../../styles/Container";
 // import FormatPrice from "./FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
-import { Footer } from "../../components";
 // import Star from "./components/Star";
 // import AddToCart from "./components/AddToCart";
 
-// const API = "https://api.pujakaitem.com/api/products";
+const API = "https://6363105f66f75177ea3c9364.mockapi.io/products";
 
 const SingleProduct = () => {
-  //   const { getSingleProduct, isSingleLoading, singleProduct } =
-  //     useProductContext();
-  //   const { id } = useParams();
+  const { getSingleProduct, isSingleLoading, singleProduct } =
+    useProductContext();
+  const { id, marca } = useParams();
 
-  //   const {
-  //     id: alias,
-  //     name,
-  //     company,
-  //     price,
-  //     description,
-  //     category,
-  //     stock,
-  //     stars,
-  //     reviews,
-  //     image,
-  //   } = singleProduct;
+  const {
+    id: alias,
+    name,
+    price,
+    description,
+    category,
+    stock,
+    stars,
+    reviews,
+    image,
+  } = singleProduct;
 
   useEffect(() => {
-    // getSingleProduct(`${API}?id=${id}`);
+    getSingleProduct(`${API}?id=${id}`);
   }, []);
 
-  //   if (isSingleLoading) {
-  //     return <div className="page-loading">Loading...</div>;
-  //   }
+  if (isSingleLoading) {
+    return <div className="page-loading">Loading...</div>;
+  }
   return (
     <Wrapper>
       {/* <PageNavigation title={name} /> */}
       <Container className="container">
         <div className="grid grid-two-column">
           {/* Lista de imagen */}
-          <div className="product_images">{/* <MyImage imgs={image} /> */}</div>
+          <div className="product_images">
+            <MyImage imgs={image} />
+          </div>
 
           {/* Datos del producto  */}
           <div className="product-data">
-            <h2>{0}</h2>
+            <h2>{name}</h2>
             {/* <Star stars={stars} reviews={reviews} /> */}
 
             <p className="product-data-price">
@@ -57,10 +57,9 @@ const SingleProduct = () => {
               <del>{/* <FormatPrice price={price + 250000} /> */}</del>
             </p>
             <p className="product-data-price product-data-real-price">
-              Oferta por hoy:
-              {/* <FormatPrice price={price} /> */}
+              {/* Oferta por hoy: <FormatPrice price={price} /> */}
             </p>
-            <p>{0}</p>
+            <p>{description}</p>
             <div className="product-data-warranty">
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
@@ -86,13 +85,13 @@ const SingleProduct = () => {
             <div className="product-data-info">
               <p>
                 Disponible:
-                <span> {1 > 0 ? "In Stock" : "Not Available"}</span>
+                <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
               </p>
               <p>
-                ID : <span> {0} </span>
+                ID : <span> {id} </span>
               </p>
               <p>
-                Marca :<span> {0} </span>
+                Marca :<span> {marca} </span>
               </p>
             </div>
             <hr />
@@ -101,7 +100,6 @@ const SingleProduct = () => {
           </div>
         </div>
       </Container>
-      <Footer />
     </Wrapper>
   );
 };
