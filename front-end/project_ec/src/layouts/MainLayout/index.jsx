@@ -417,7 +417,7 @@ const MainLayout = () => {
                     component={Link}
                     to="/quienes"
                   >
-                    Quienes Somos
+                    ¿Quienes Somos?
                   </Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
@@ -476,7 +476,7 @@ const MainLayout = () => {
                 component={Link}
                 to="/quienes"
               >
-                Quienes Somos
+                ¿Quienes Somos?
               </Button>
               <Button
                 onClick={handleCloseNavMenu}
