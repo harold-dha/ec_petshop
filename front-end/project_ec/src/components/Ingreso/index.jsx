@@ -8,14 +8,11 @@ import Button from "@mui/material/Button";
 import "../../App.css";
 import { Grid } from "@mui/material";
 
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
-
 const Ingreso = () => {
-  const [page, setPage] = useState(1);
-  const handleChange = (event, value) => {
-    setPage(value);
-  };
+  // const [page, setPage] = useState(1);
+  // const handleChange = (event, value) => {
+  //   setPage(value);
+  // };
 
   return (
     <>
@@ -185,12 +182,6 @@ const Ingreso = () => {
             </Grid>
           </Grid>
         </Box>
-        {/* <Box sx={{ display: "flex", justifyContent: "end", marginTop: "20px" }}>
-          <Stack spacing={2}>
-            <Typography>Page: {page}</Typography>
-            <Pagination count={10} page={page} onChange={handleChange} />
-          </Stack>
-        </Box> */}
       </Box>
     </>
   );

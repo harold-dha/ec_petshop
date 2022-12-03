@@ -1,4 +1,4 @@
-import { Button, Divider, Paper, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import GridProducts from "../GridProducts";
@@ -12,6 +12,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   let grid_view = true;
+  console.log("TRAEDATOS", grid_view);
 
   async function getProductos() {
     const response = await getProducts("listar");
@@ -19,34 +20,24 @@ const ProductList = () => {
   }
 
   const handleChangeEvento = (e) => {
-    const value = e.target;
-    console.log(value);
-    if (e.value === "true") {
+    const value = e.target.value;
+    console.log(typeof value);
+    if (value === "true") {
+      console.log("entro");
       grid_view = true;
-    }
-  };
-  const handleChangeEvento2 = (e) => {
-    const value = e.target;
-    console.log(value);
-    if (e.value === "false") {
+    } else {
+      console.log("no entro");
       grid_view = false;
     }
+    console.log("grid", grid_view);
   };
-
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-
-  //   setValues({
-  //     ...values,
-  //     [name]: value,
-  //   });
-  // };
 
   useEffect(() => {
     getProductos();
-  }, []);
+  }, [grid_view]);
 
   if (grid_view === true) {
+    console.log("verdadero", grid_view);
     return (
       <>
         <Box sx={{ margin: "20px 0" }}>
@@ -58,23 +49,34 @@ const ProductList = () => {
             <BsFillGridFill className="icon" />
           </Button>
 
-          <Button value="false" className="active sort-btn">
+          <Button
+            value="false"
+            className="active sort-btn"
+            onClick={handleChangeEvento}
+          >
             <BsList className="icon" />
           </Button>
         </Box>
         <GridProducts list={products} />
       </>
     );
-  }
-  if (grid_view === false) {
+  } else {
     return (
       <>
         <Box sx={{ margin: "20px 0" }}>
-          <Button className="sort-btn" onClick={handleChangeEvento2}>
+          <Button
+            className="sort-btn"
+            onClick={handleChangeEvento}
+            value="true"
+          >
             <BsFillGridFill className="icon" />
           </Button>
 
-          <Button className="active sort-btn">
+          <Button
+            value="false"
+            className="active sort-btn"
+            onClick={handleChangeEvento}
+          >
             <BsList className="icon" />
           </Button>
         </Box>
@@ -82,6 +84,31 @@ const ProductList = () => {
       </>
     );
   }
+  // if (grid_view == false) {
+  //   console.log("falso", grid_view);
+  //   return (
+  //     <>
+  //       <Box sx={{ margin: "20px 0" }}>
+  //         <Button
+  //           className="sort-btn"
+  //           onClick={handleChangeEvento}
+  //           value="true"
+  //         >
+  //           <BsFillGridFill className="icon" />
+  //         </Button>
+
+  //         <Button
+  //           value="false"
+  //           className="active sort-btn"
+  //           onClick={handleChangeEvento}
+  //         >
+  //           <BsList className="icon" />
+  //         </Button>
+  //       </Box>
+  //       <GridList list={products} />
+  //     </>
+  //   );
+  // }
 };
 
 export default ProductList;

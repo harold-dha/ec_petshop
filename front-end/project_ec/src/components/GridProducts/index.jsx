@@ -6,7 +6,6 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  Paper,
   Typography,
 } from "@mui/material";
 
@@ -33,10 +32,7 @@ function GridProducts(props) {
                   >
                     {product.nombre_producto}
                   </Typography>
-                  <Typography>
-                    Atractivas camas y con gran espacio para que tu mascota
-                    disfrute sus noches
-                  </Typography>
+                  <Typography>{product.descripcion_producto}</Typography>
                   <Typography
                     gutterBottom
                     variant="h4"
