@@ -1,8 +1,8 @@
 const Hapi = require('@hapi/hapi')
-// const { Pool } = require('pg')
+const { Pool } = require('pg')
 const dotenv = require('dotenv')
 const { plugins } = require('./src/documentation/swagger/global-config-swagger')
-// const constants = require('./src/constants')
+const constants = require('./src/constants')
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Cargando archivo de variables de entorno local')
@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
   process.env.STAGE = 'local'
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 }
-/*
+
 const options = {
   user: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASS,
@@ -19,22 +19,27 @@ const options = {
   database: process.env.POSTGRES_DATABASE,
   // ssl: true
 }
-const pool = new Pool(options)
-*/
+let postgresqlConnection = new Pool(options)
+
 const productosRouter = require('./src/routes/productos.router')
 const oArgs = {
   port: process.env.PORT,
+  routes: {
+    cors: {
+      origin: ['*'],
+    }
+  }
 }
 let hapiServer = new Hapi.Server(oArgs)
 
 async function registerAllPlugins() {
   try {
-    await hapiServer.register(plugins)
-    await hapiServer.register([
+   await hapiServer.register(plugins)
+   await hapiServer.register([
      {
         plugin: productosRouter,
         options: {
-        //  postgresqlConnection: pool
+         postgresqlConnection: postgresqlConnection
         }
      }
    ])
@@ -46,6 +51,7 @@ async function registerAllPlugins() {
 const main = async function () {
   await registerAllPlugins()
   await hapiServer.start()
+//   console.log(hapiServer.registrations)
   console.log(`Server running at: ${hapiServer.info.uri}`)
 }
 module.exports.main = main
