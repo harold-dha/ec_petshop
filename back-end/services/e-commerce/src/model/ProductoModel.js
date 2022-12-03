@@ -8,7 +8,7 @@ const options = {
     database: process.env.POSTGRES_DATABASE,
     // ssl: true
   }
-const pool = new Pool(options)
+  const pool = new Pool(options)
 
 async function listar() {
     const columnas = [
@@ -18,7 +18,6 @@ async function listar() {
         'id_marca',
         'codigo_producto',
         'nombre_producto',
-        'descripcion_producto',
         'precio_producto',
         'stock_producto',
         'url_producto',
@@ -29,28 +28,6 @@ async function listar() {
     return result.rows
 }
 
-async function busqueda_individual(codigoProducto) {
-    const columnas = [
-        'id',
-        'id_categoria',
-        'id_grupo',
-        'id_marca',
-        'codigo_producto',
-        'nombre_producto',
-        'descripcion_producto',
-        'precio_producto',
-        'stock_producto',
-        'url_producto',
-      ]
-    const sql = `SELECT ${columnas.join(',')} FROM producto
-    WHERE codigo_producto = $1`
-    const result = await pool.query(sql, [
-        codigoProducto
-    ])
-    return result.rows
-}
-
  module.exports.ProductoModel = {
-  listar,
-  busqueda_individual
+  listar
 }

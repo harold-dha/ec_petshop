@@ -1,40 +1,17 @@
 const { ProductoModel } = require('../model/ProductoModel')
 
-async function listar() {
-  console.log('Conexion a bd iniciada')
-  let result = []
+async function listar() {  
+  let output = {}
   try {
-    result = await ProductoModel.listar()
+    let result = await ProductoModel.listar()
+    output['data'] = result
   }
   catch (e) {
-    console.log(e.message)
-    throw(e.message)
+    console.log(e)
   }
-  finally {
-    console.log('Conexion a bd liberada')
-    // pgClient.release()
-  }
-  return result
+  return output
 }
 
-async function busqueda_individual(codigoProducto) {
-    console.log('Conexion a bd iniciada')
-    let result = []
-    try {
-      result = await ProductoModel.busqueda_individual(codigoProducto)
-    }
-    catch (e) {
-      console.log(e.message)
-      throw(e.message)
-    }
-    finally {
-      console.log('Conexion a bd liberada')
-      // pgClient.release()
-    }
-    return result[0]
-}
  module.exports.ProductoService = {
-  listar,
-  busqueda_individual
+  listar
  }
- 
