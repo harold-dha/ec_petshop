@@ -5,7 +5,7 @@ import { Footer, FilterSection, Sort, ProductList } from "../../components";
 const Products = () => {
   return (
     <Wrapper>
-      <div className="container grid grid-filter-column">
+      <div className="container grid grid-filter-column producto_general">
         <div>
           <FilterSection />
         </div>
@@ -27,6 +27,9 @@ const Products = () => {
 const Wrapper = styled.section`
   .grid-filter-column {
     grid-template-columns: 0.2fr 1fr;
+  }
+  .producto_general {
+    padding: 20px;
   }
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .grid-filter-column {

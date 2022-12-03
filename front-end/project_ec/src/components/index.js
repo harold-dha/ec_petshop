@@ -11,3 +11,4 @@ export { default as MyImage } from "./MyImage";
 export { default as FilterSection } from "./FilterSection";
 export { default as Sort } from "./Sort";
 export { default as ProductList } from "./ProductList";
+export { default as GridList } from "./GridList";
