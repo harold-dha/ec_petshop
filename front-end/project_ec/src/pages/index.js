@@ -5,3 +5,4 @@ export { default as SingleProductView } from "./SingleProduct";
 export { default as QuienesView } from "./Quienes";
 export { default as ProductsView } from "./Products";
 export { default as ContactView } from "./Contac";
+export { default as Cart } from "./Cart";

@@ -34,13 +34,14 @@ const ProductList = () => {
 
   useEffect(() => {
     getProductos();
-  }, [grid_view]);
+  }, []);
 
+  // handleChangeEvento();
   if (grid_view === true) {
     console.log("verdadero", grid_view);
     return (
       <>
-        <Box sx={{ margin: "20px 0" }}>
+        {/* <Box sx={{ margin: "20px 0" }}>
           <Button
             value="true"
             className="sort-btn"
@@ -56,34 +57,29 @@ const ProductList = () => {
           >
             <BsList className="icon" />
           </Button>
-        </Box>
-        <GridProducts list={products} />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Box sx={{ margin: "20px 0" }}>
-          <Button
-            className="sort-btn"
-            onClick={handleChangeEvento}
-            value="true"
-          >
-            <BsFillGridFill className="icon" />
-          </Button>
-
-          <Button
-            value="false"
-            className="active sort-btn"
-            onClick={handleChangeEvento}
-          >
-            <BsList className="icon" />
-          </Button>
-        </Box>
-        <GridList list={products} />
+        </Box> */}
+        <GridProducts sx={{ marginTop: "20px" }} list={products} />
       </>
     );
   }
+  return (
+    <>
+      {/* <Box sx={{ margin: "20px 0" }}>
+        <Button className="sort-btn" onClick={handleChangeEvento} value="true">
+          <BsFillGridFill className="icon" />
+        </Button>
+
+        <Button
+          value="false"
+          className="active sort-btn"
+          onClick={handleChangeEvento}
+        >
+          <BsList className="icon" />
+        </Button>
+      </Box> */}
+      <GridList list={products} />
+    </>
+  );
   // if (grid_view == false) {
   //   console.log("falso", grid_view);
   //   return (

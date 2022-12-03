@@ -10,6 +10,7 @@ import {
   QuienesView,
   ProductsView,
   ContactView,
+  Cart,
 } from "../pages";
 const Router = () => {
   const theme = {
@@ -48,6 +49,7 @@ const Router = () => {
             <Route path="/products" element={<ProductsView />} />
             <Route path="/contact" element={<ContactView />} />
             <Route path="/singleproduct/:id" element={<SingleProductView />} />
+            <Route path="/cart" element={<Cart />} />
           </Route>
           <Route path="/login" element={<LoginView />} />
           <Route path="/sign-up" element={<SignUpView />} />

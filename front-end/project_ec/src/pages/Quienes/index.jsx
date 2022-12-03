@@ -7,9 +7,9 @@ const Quienes = () => {
     <>
       <Wrapper>
         <div className="contenedor">
-          <h2>¿Quienes Somos?</h2>
+          <h2 style={{ color: "#1b699b" }}>¿Quienes Somos?</h2>
           <div className="mision">
-            <h3>Mision</h3>
+            <h3 style={{ color: "#1b699b" }}>Mision</h3>
             <p>
               Todo lo que integramos en este proyecto amamos los animales , esta
               pagina fue creadaa para integrar sus necesidades creado productos
@@ -17,7 +17,7 @@ const Quienes = () => {
             </p>
           </div>
           <div className="vision">
-            <h3>Vision</h3>
+            <h3 style={{ color: "#1b699b" }}>Vision</h3>
             <p>
               Tenemos la certeza que seremos reconocidos por nuestra calidad y
               la original en nuestros productos , que haran que sus mascotas
@@ -25,7 +25,7 @@ const Quienes = () => {
             </p>
           </div>
           <div className="pasion">
-            <h3>Pasión</h3>
+            <h3 style={{ color: "#1b699b" }}>Pasión</h3>
             <p>
               La pasion por los animales es el motor de nuestro trabajo,somos
               entusiasta del mundo animal

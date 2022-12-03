@@ -12,7 +12,7 @@ function GridList(props) {
   const { list } = props;
   return (
     <>
-      <Grid container spacing={4}>
+      <Grid sx={{ marginTop: "20px" }} container spacing={4}>
         {list.length > 0 &&
           list.map((product, index) => (
             <Grid item xs={12} sm={12} md={12} lg={12} key={index}>

@@ -12,3 +12,5 @@ export { default as FilterSection } from "./FilterSection";
 export { default as Sort } from "./Sort";
 export { default as ProductList } from "./ProductList";
 export { default as GridList } from "./GridList";
+export { default as ListProducts } from "./ListProducts";
+export { default as CartItem } from "./CartItem";
