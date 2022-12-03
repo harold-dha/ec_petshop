@@ -255,6 +255,13 @@ const FilterSection = () => {
           >
             Perro
           </button>
+          <button
+            type="button"
+            name="category"
+            // className={curElem === category ? "active" : ""}
+          >
+            Gato
+          </button>
         </div>
       </div>
 
@@ -267,14 +274,22 @@ const FilterSection = () => {
             id="company"
             className="filter-company--select"
           >
-            <option name="company">Dog Show</option>
+            <option name="company">Dog Chow</option>
+            <option name="company">Proplan</option>
+            <option name="company">Canbo</option>
+            <option name="company">Barker</option>
+            <option name="company">Hill's</option>
+            <option name="company">Ricocan</option>
           </select>
         </form>
       </div>
 
       <div className="filter_price">
         <h3>Precio</h3>
-        <p>{0}</p>
+        <div className="precio__flex">
+          <div className="precio__flex__p">{1}</div>
+          <div className="precio__flex__p">{1000}</div>
+        </div>
         <input type="range" name="price" />
       </div>
 
@@ -289,6 +304,13 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  .precio__flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .precio__flex__p {
+    font-size: 1.6rem;
+  }
   h3 {
     padding: 2rem 0;
     font-size: bold;

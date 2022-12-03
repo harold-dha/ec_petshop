@@ -93,6 +93,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BsFillGridFill, BsList } from "react-icons/bs";
+import GridList from "../GridList";
 
 const Sort = () => {
   return (
@@ -103,7 +104,7 @@ const Sort = () => {
           <BsFillGridFill className="icon" />
         </button>
 
-        <button className="active sort-btn">
+        <button className="active sort-btn" onClick={<GridList />}>
           <BsList className="icon" />
         </button>
       </div>
