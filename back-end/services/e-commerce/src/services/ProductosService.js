@@ -37,3 +37,4 @@ async function busqueda_individual(codigoProducto) {
   listar,
   busqueda_individual
  }
+ 
